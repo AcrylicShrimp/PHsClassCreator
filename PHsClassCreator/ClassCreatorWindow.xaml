@@ -1,0 +1,48 @@
+﻿<Window x:Class="PHsClassCreator.ClassCreatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PHsClassCreator"
+        mc:Ignorable="d"
+        Title="PHsClassCreator for C++" Width="650" WindowStartupLocation="CenterScreen" FontFamily="Consolas" FontSize="13" ResizeMode="CanMinimize" SizeToContent="Height" Loaded="OnWindowLoaded">
+	<Grid>
+		<GroupBox x:Name="projectGroup" Header="Project" Margin="10,10,10,0" VerticalAlignment="Top" Height="88">
+			<Grid Margin="10">
+				<Label x:Name="projectLocation" Margin="0,0,100,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
+					<TextBlock x:Name="projectLocationBlock" TextWrapping="Wrap" Text="N/A" TextTrimming="WordEllipsis"/>
+				</Label>
+				<Button x:Name="projectFind" Content="Find" HorizontalAlignment="Right" Width="95" Click="OnFindButtonClick"/>
+			</Grid>
+		</GroupBox>
+		<GroupBox x:Name="creation" Header="Creation" Margin="10,103,10,10" VerticalAlignment="Top" Height="Auto">
+			<Grid Margin="10">
+				<Label x:Name="creationName" Content="Target name :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="14,0,0,0" Height="25" VerticalAlignment="Top"/>
+				<TextBox x:Name="creationNameText" Margin="122,2,110,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" Height="23" VerticalAlignment="Top" TextChanged="OnNameChanged"/>
+
+				<Label x:Name="creationNamespace" Content="Namespace :" HorizontalAlignment="Left" Margin="28,30,0,0" HorizontalContentAlignment="Left" VerticalAlignment="Top"/>
+				<TextBox x:Name="creationNamespaceText" Margin="122,32,110,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" Height="23" VerticalAlignment="Top" TextChanged="OnNameChanged"/>
+
+				<Label x:Name="creationType" Content="Target type :" HorizontalAlignment="Left" Margin="14,60,0,0" Height="25" VerticalAlignment="Top"/>
+				<ComboBox x:Name="creationTypeCombo" Margin="122,64,110,0" VerticalContentAlignment="Center" MaxDropDownHeight="240" SelectedIndex="0" Height="21" VerticalAlignment="Top" SelectionChanged="OnTypeChanged">
+					<ComboBoxItem x:Name="class" Content="Class"/>
+					<ComboBoxItem x:Name="templateclass" Content="Template Class"/>
+					<ComboBoxItem x:Name="interface" Content="Interface"/>
+				</ComboBox>
+
+				<Button x:Name="creationButton" Content="Create" HorizontalAlignment="Right" Width="95" Height="113" VerticalAlignment="Top" Click="OnCreateButtonClick" Margin="0,2,0,0" />
+
+				<CheckBox x:Name="creationIncludeGuardCheck" Content="With include guard" Margin="0,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Checked="OnGuardCheckedChanged" IsChecked="True" Unchecked="OnGuardCheckedChanged"/>
+				<Label x:Name="creationIncludeGuard" Content="Include guard :" HorizontalAlignment="Left" Margin="0,138,0,0" VerticalAlignment="Top"/>
+				<TextBox x:Name="creationIncludeGuardText" Height="23" Margin="122,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+
+				<Label x:Name="creationFileName" Content="File name :" HorizontalAlignment="Left" Margin="28,90,0,0" VerticalAlignment="Top"/>
+				<TextBox x:Name="creationFileNameText" Height="23" Margin="122,92,110,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+
+				
+
+				<Label x:Name="creationError" Content="Ready." VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Margin="0,168,0,0" Height="32" VerticalAlignment="Top"/>
+			</Grid>
+		</GroupBox>
+	</Grid>
+</Window>
