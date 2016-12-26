@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PHs")]
 [assembly: AssemblyProduct("PHsClassCreator")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
+[assembly: AssemblyCopyright("Copyright © 2016, Created by AcrylicShrimp, PHJ.")]
 [assembly: AssemblyTrademark("PHs")]
 [assembly: AssemblyCulture("")]
 
